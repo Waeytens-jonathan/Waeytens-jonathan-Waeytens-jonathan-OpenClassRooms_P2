@@ -31,3 +31,8 @@ def get_book(url):
 
 
     return infos
+
+
+""" def pagination():
+
+Change de page une fois tous les livres d'une catégorie extrait."""
