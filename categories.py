@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import book
 
 
 def get_all_categories(url):
@@ -20,4 +21,20 @@ def get_all_categories(url):
     return categories
 
 def get_books_from_categorie(url):
-    pass
+    books_page = requests.get(url)
+    soup_page = BeautifulSoup(books_page.content, "html.parser")
+
+    all_books = []
+
+    books_li = soup_page.find('div', class_='col-sm-8 col-md-9').find('ol', class_='row').find_all('li')
+    for li in books_li:
+        book_url = requests.compat.urljoin(url, li.find('h3').find('a').attrs['href'])
+        all_books.append(book.get_book(book_url))
+
+    return all_books
+
+
+
+
+
+    

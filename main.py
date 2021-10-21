@@ -6,20 +6,17 @@ if __name__=="__main__":
 
    url = "https://books.toscrape.com/" 
 
-   books = book.get_book("https://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html")
-   print(books)
-   
-
    books_categories = categories.get_all_categories(url)
    
+   books = []
+   """for cat in books_categories:
+      books += categories.get_books_from_categorie(cat[1])"""
+      
+   books += categories.get_books_from_categorie("https://books.toscrape.com/catalogue/category/books/mystery_3/index.html") # passe l'url en dur pour les test
+      
+   print(books)
 
-   print(books_categories[0])
+
    
- 
-   for cat in books_categories:
-      categories.get_books_from_categorie(cat[1])
 
-
-   
-
-    
+     
