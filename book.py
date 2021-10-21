@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+import categories
 
-base_url = "https://books.toscrape.com/"
 
 def get_book(url):
 
@@ -13,7 +13,7 @@ def get_book(url):
         book_soup = BeautifulSoup(book_page.content, 'html.parser')
         # [6:] permet de supprimer les caractères en trop présent dans l'URL de l'image, la valeur vaut le nombre de caractères
         infos["title"] = book_soup.find('div', class_="col-sm-6 product_main").find('h1').text
-        infos["image"] = base_url + book_soup.find('div', class_='item active').find('img').attrs["src"][6:]
+        infos["image"] = requests.compat.urljoin(url, book_soup.find('div', class_='item active').find('img').attrs["src"])
         infos["rating"] = book_soup.find('p', class_='star-rating').attrs["class"][1]
         table = book_soup.find('table', class_='table table-striped').find_all('tr')
         for tr in table:

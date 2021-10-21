@@ -1,10 +1,11 @@
-import page
+import requests
 from bs4 import BeautifulSoup
 
 
 def get_all_categories(url):
 
-    soup = page.parse_main_page(url)
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, "html.parser")
 
     categories = []
 
@@ -13,23 +14,10 @@ def get_all_categories(url):
     for li in all_categories:
         url_cat = []
         url_cat.append(li.find('a').text.strip())
-        url_cat.append(url + li.find('a').attrs['href'])
+        url_cat.append(requests.compat.urljoin(url, li.find('a').attrs['href']))
         categories.append(url_cat)
     
     return categories
-        
-    
 
-#get_all_categories("https://books.toscrape.com/")
-    
-    
-    
-    
-    
-    
-
-
-
-
-#def get_book_by_categorie():
-    # pour chaque livre dans catégorie stocker les urls des livres
+def get_books_from_categorie(url):
+    pass
