@@ -25,7 +25,8 @@ def get_book(url):
             elif th_text == "Price (excl. tax)":
                 infos["price_excluding_tax"] = tr.find('td').text
             elif th_text == "Availability":
-                infos["number_available"] = tr.find('td').text
+                available = tr.find('td').text.strip()
+                infos["number_available"] = int(available[10:-11])
         infos["category"] = book_soup.find('ul', class_='breadcrumb').find_all('li')[2].find('a').text
         infos["product_description"] = book_soup.find_all('p')[3].text
 
