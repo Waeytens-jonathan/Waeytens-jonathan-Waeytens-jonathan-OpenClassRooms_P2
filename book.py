@@ -14,7 +14,7 @@ def get_book(url):
         # [6:] permet de supprimer les caractères en trop présent dans l'URL de l'image, la valeur vaut le nombre de caractères
         infos["title"] = book_soup.find('div', class_="col-sm-6 product_main").find('h1').text
         infos["image"] = requests.compat.urljoin(url, book_soup.find('div', class_='item active').find('img').attrs["src"])
-        infos["rating"] = book_soup.find('p', class_='star-rating').attrs["class"][1]
+        infos["rating"] = numbers_str_to_int(book_soup.find('p', class_='star-rating').attrs["class"][1])
         table = book_soup.find('table', class_='table table-striped').find_all('tr')
         for tr in table:
             th_text = tr.find('th').text
@@ -32,7 +32,16 @@ def get_book(url):
 
     return infos
 
-
-""" def pagination():
-
-Change de page une fois tous les livres d'une catégorie extrait."""
+def numbers_str_to_int(rating):
+    if rating == 'One':
+        return 1
+    elif rating =='Two':
+        return 2
+    elif rating =='Three':
+        return 3
+    elif rating =='Four':
+        return 4
+    elif rating =='Five':
+        return 5
+    else:
+        return 0
