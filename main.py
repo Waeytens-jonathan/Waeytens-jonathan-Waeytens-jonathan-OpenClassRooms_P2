@@ -1,5 +1,4 @@
 import categories
-import book
 import create_csv
 
 
@@ -9,7 +8,6 @@ if __name__=="__main__":
 
    books_categories = categories.get_all_categories(url)
    
-
    books = []
    for cat in books_categories:
       
