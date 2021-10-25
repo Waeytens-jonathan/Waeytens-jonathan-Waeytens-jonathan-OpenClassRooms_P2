@@ -11,14 +11,11 @@ def csv_by_categorie(title, all_books):
     else: 
         return
 
-
-
     with open(title, 'w', encoding='utf-8') as csv_file:
 
         writer = csv.DictWriter(csv_file, fieldnames = csv_columns )
         writer.writeheader()
-        
+
         for book in all_books:
 
             writer.writerow(book)
-        
