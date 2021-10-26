@@ -11,7 +11,7 @@ def csv_by_categorie(title, all_books):
     else: 
         return
 
-    with open(title, 'w', encoding='utf-8') as csv_file:
+    with open('all_books_categories/'+ title, 'w', encoding='utf-8') as csv_file:
 
         writer = csv.DictWriter(csv_file, fieldnames = csv_columns )
         writer.writeheader()
@@ -19,3 +19,10 @@ def csv_by_categorie(title, all_books):
         for book in all_books:
 
             writer.writerow(book)
+
+
+'''def image_by_categorie(all_books):
+
+    images = []'''
+
+   
