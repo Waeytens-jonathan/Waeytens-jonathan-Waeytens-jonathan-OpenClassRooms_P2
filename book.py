@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import csv
 
 
 def get_book(url):
@@ -31,6 +32,8 @@ def get_book(url):
         infos["product_description"] = book_soup.find_all('p')[3].text
 
 
+        download_image(infos["UPC"],infos["image"])
+
     return infos
 
 def numbers_str_to_int(rating):
@@ -39,3 +42,17 @@ def numbers_str_to_int(rating):
     rating_change = {'One': 1,'Two': 2,'Three': 3, 'Four': 4, 'Five': 5}
 
     return rating_change[rating]
+
+
+def download_image(upc, image):
+    '''Get all images'''
+
+    image_requests = requests.get(image)
+
+    if image_requests.ok:
+
+        upc += '.jpg'
+
+        with open('images/' + upc, 'wb') as files:
+            files.write(image_requests.content)
+
