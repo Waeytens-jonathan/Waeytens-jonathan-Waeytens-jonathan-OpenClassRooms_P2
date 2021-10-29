@@ -1,5 +1,6 @@
 import categories
 import create_csv
+import os
 
 
 if __name__=="__main__":
@@ -7,6 +8,12 @@ if __name__=="__main__":
    url = "https://books.toscrape.com/" 
 
    books_categories = categories.get_all_categories(url)
+
+   if not os.path.exists("all_books_categories"):
+      os.mkdir("all_books_categories")
+
+   if not os.path.exists("images"):
+      os.mkdir("images")
    
    
    for cat in books_categories:
