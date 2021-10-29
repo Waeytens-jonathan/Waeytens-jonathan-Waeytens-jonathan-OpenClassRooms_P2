@@ -4,6 +4,7 @@ import book
 
 
 def get_all_categories(url):
+    '''extract all url categories'''
 
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
@@ -21,6 +22,7 @@ def get_all_categories(url):
     return categories
 
 def get_books_from_categorie(url):
+    '''get all book from categorie'''
 
     all_books = []
     

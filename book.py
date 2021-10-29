@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 
 def get_book(url):
+    '''Get all infos for one book'''
 
     infos = {}
 
@@ -33,15 +34,8 @@ def get_book(url):
     return infos
 
 def numbers_str_to_int(rating):
-    if rating == 'One':
-        return 1
-    elif rating =='Two':
-        return 2
-    elif rating =='Three':
-        return 3
-    elif rating =='Four':
-        return 4
-    elif rating =='Five':
-        return 5
-    else:
-        return 0
+    '''convert string to int'''
+
+    rating_change = {'One': 1,'Two': 2,'Three': 3, 'Four': 4, 'Five': 5}
+
+    return rating_change[rating]

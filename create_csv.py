@@ -1,6 +1,7 @@
 import csv
 
 def csv_by_categorie(title, all_books):
+    '''stores all categories in a file with the same name'''
 
     title += '.csv'
     csv_columns = []
@@ -19,10 +20,3 @@ def csv_by_categorie(title, all_books):
         for book in all_books:
 
             writer.writerow(book)
-
-
-'''def image_by_categorie(all_books):
-
-    images = []'''
-
-   
