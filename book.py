@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import csv
 
 
 def get_book(url):
@@ -55,4 +54,3 @@ def download_image(upc, image):
 
         with open('images/' + upc, 'wb') as files:
             files.write(image_requests.content)
-

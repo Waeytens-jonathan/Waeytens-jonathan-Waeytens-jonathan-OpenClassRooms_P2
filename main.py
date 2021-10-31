@@ -9,7 +9,7 @@ if __name__=="__main__":
 
    books_categories = categories.get_all_categories(url)
 
-   if not os.path.exists("all_books_categories"):
+   if not os.path.exists("all_books_categories"): #conditionne la création des dossiers
       os.mkdir("all_books_categories")
 
    if not os.path.exists("images"):
