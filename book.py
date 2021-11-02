@@ -32,6 +32,8 @@ def get_book(url):
 
 
         download_image(infos["UPC"],infos["image"])
+    else:
+        print("Error get book")
 
     return infos
 
@@ -54,3 +56,5 @@ def download_image(upc, image):
 
         with open('images/' + upc, 'wb') as files:
             files.write(image_requests.content)
+    else:
+        print("Download image is impossible")

@@ -21,7 +21,10 @@ def get_all_categories(url):
             url_cat.append(requests.compat.urljoin(url, li.find('a').attrs['href']))
             categories.append(url_cat)
     
-        return categories
+    else:
+        print("Error categories")
+
+    return categories
 
 def get_books_from_categorie(url):
     '''get all book from categorie'''
@@ -35,8 +38,6 @@ def get_books_from_categorie(url):
 
         if books_page.ok:
 
-        
-
             books_li = soup_page.find('div', class_='col-sm-8 col-md-9').find('ol', class_='row').find_all('li')
             for li in books_li:
                 book_url = requests.compat.urljoin(url, li.find('h3').find('a').attrs['href'])
@@ -48,5 +49,7 @@ def get_books_from_categorie(url):
                 url = requests.compat.urljoin(url, li_next.find('a').attrs['href'])
             else:
                 break
-    
+        else:
+            print ("Error from get books categories")
+              
     return all_books
