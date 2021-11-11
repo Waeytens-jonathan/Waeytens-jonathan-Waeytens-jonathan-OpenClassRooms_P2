@@ -7,7 +7,7 @@ Version Python: 3.9.6
 Téléchargement ici : https://www.python.org/downloads/release/python-396/
 ---
 
-# Création d'un environement virtuel
+# Création d'un environnement virtuel
 
 ---
 
@@ -21,7 +21,7 @@ python -m venv env
 
 ---
 
-# Activation de votre environement
+# Activation de votre environnement
 
 ---
 
