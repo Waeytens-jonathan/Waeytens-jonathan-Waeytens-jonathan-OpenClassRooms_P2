@@ -1,37 +1,63 @@
 
 # Books-Scraper
 
-Ce programme sert à extraire les données des livres du site: https://books.toscrape.com/
-
-Il extrait les informations suivantes:
-
-- product_page_url
-- universal_ product_code (upc)
-- title
-- price_including_tax
-- price_excluding_tax
-- number_available
-- product_description
-- category
-- review_rating
-- image_url
-- image.jpg
-
-Il ajoute un dossier "all_books_categories" dans lequel il va écrire toutes les infos 
-dans un fichier .CSV
-
-Il ajoute un dossier "images" dans lequel il va stocker toutes les images 
-dans un fichier .jpg
-
 ---
 Version Python: 3.9.6 
+
+Téléchargement ici : https://www.python.org/downloads/release/python-396/
 ---
 
-Bibliothèques:
+# Création d'un environement virtuel
 
-- requests
-- BeautifulSoup
-- csv 
-- os
+---
 
-Le lancement du programme ce fait à partir du main.py
+Mettre le dossier sur votre bureau puis executer ceci avec le cmd (touche windows+r):
+
+cd desktop\formation_ocr\p2_waeytensjonathan
+
+Créer votre environement virtuel avec la commande suivante:
+
+python -m venv env
+
+---
+
+# Activation de votre environement
+
+---
+
+Rentrer la commande suivante:
+
+cd env\scripts
+
+
+Puis activer le avec la commande suivante: 
+
+activate.bat
+
+Vous êtes maintenant dans votre environement virtuel !
+
+---
+
+# installation des bibliothèques
+
+---
+
+Taper la commande suivante:
+
+pip install -r requirement.txt
+
+---
+
+# Lancer votre programme
+
+---
+
+Revenez dans le dossier p2_waeytensjonathan avec la commande suivante:
+
+cd ..\..
+
+puis taper:
+
+python main.py 
+
+Appuyer sur entrée pour lancer le code
