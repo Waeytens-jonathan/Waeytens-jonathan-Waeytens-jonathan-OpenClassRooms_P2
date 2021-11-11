@@ -54,7 +54,7 @@ pip install -r requirement.txt
 
 Revenez dans le dossier p2_waeytensjonathan avec la commande suivante:
 
-cd ..\ ..
+cd ..\ .. (deux points, anti-slash, deux points) sans espace
 
 puis taper:
 
