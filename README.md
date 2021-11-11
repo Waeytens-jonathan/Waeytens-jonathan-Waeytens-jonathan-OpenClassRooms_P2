@@ -13,7 +13,7 @@ Téléchargement ici : https://www.python.org/downloads/release/python-396/
 
 Mettre le dossier sur votre bureau puis executer ceci avec le cmd (touche windows+r):
 
-cd desktop\formation_ocr\p2_waeytensjonathan
+cd desktop\P2_Waeytens_Jonathan\P2_01_codesource
 
 Créer votre environement virtuel avec la commande suivante:
 
@@ -52,7 +52,7 @@ pip install -r requirement.txt
 
 ---
 
-Revenez dans le dossier p2_waeytensjonathan avec la commande suivante:
+Revenez dans le dossier P2_01_codesource avec la commande suivante:
 
 cd ..\ .. (deux points, anti-slash, deux points) sans espace
 
